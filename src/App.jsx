@@ -46,7 +46,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/category/:gender" element={<CategoryPage />} />
         <Route path="/category/:gender/:category" element={<CategoryPage />} />
-        <Route path="/category/:gender/:subcategory" element={<CategoryPage />} />
+        <Route path="/category/:gender/subcat/:subcategory" element={<CategoryPage />} />
       </Routes>
       <Footer /> {/* Pie de página que estará visible en todas las rutas */}
     </Router>

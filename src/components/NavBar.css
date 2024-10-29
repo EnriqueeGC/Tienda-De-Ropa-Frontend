@@ -274,3 +274,65 @@
 .navbar-search-icon:hover {
   color: #ddd;
 }
+
+/* Estilos para el contenedor del dropdown de categorías */
+.dropdown-categories {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ocultar el menú por defecto */
+.dropdown-menu-categories {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 1000px; /* Ancho del modal */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 4px;
+  padding: 20px;
+  top: 100%; /* Posiciona el modal justo debajo de la categoría */
+  left: 50%; /* Centra el modal horizontalmente */
+  transform: translateX(-50%); /* Ajusta el modal para que esté en medio */
+  display: flex; /* Flexbox para crear columnas */
+  flex-wrap: wrap; /* Permite que las categorías se ajusten en columnas */
+  gap: 20px; /* Espacio entre las columnas */
+  pointer-events: none; /* Evita mostrar el modal al pasar el ratón por debajo */
+  opacity: 0; /* Comienza oculto */
+  transition: opacity 0.3s ease;
+}
+
+/* Mostrar el menú al pasar el puntero */
+.dropdown-categories:hover .dropdown-menu-categories {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto; /* Activa los eventos del puntero solo cuando se muestra el modal */
+}
+
+/* Estilos para las columnas de categorías */
+.category-column-categories {
+  flex: 1; /* Permite que cada columna tenga el mismo ancho */
+  min-width: 180px; /* Ancho mínimo de cada columna */
+}
+
+/* Estilos para los enlaces en el menú de categorías */
+.dropdown-menu-categories a {
+  color: black;
+  padding: 8px 0;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+/* Cambiar color al pasar el puntero sobre las opciones */
+.dropdown-menu-categories a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos adicionales para mejorar la presentación */
+.dropdown-categories a {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  color: #333;
+}

@@ -5,6 +5,8 @@ import './Home.css'; // Archivo de estilos para la página de inicio
 const Home = () => {
   const [currentAd, setCurrentAd] = useState(0);
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
+  const limit = 10;
 
   // Mensajes para la barra de anuncios
   const ads = [
@@ -24,7 +26,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`https://tienda-de-ropa-v6h4.onrender.com/api/products/getAll`); // Cambia el endpoint según tu API
+        const response = await fetch(`https://tienda-de-ropa-v6h4.onrender.com/api/products/getAll?page=${page}&limit=${limit}`); // Cambia el endpoint según tu API
         const data = await response.json();
         setProducts(data);
         console.log(data);
@@ -33,7 +35,10 @@ const Home = () => {
       }
     };
     fetchProducts();
-  }, []);
+  }, [page]);
+
+  const handleNextPage = () => setPage((prevPage) => prevPage + 1);
+  const handlePrevPage = () => setPage((prevPage) => Math.max(prevPage - 1, 1));
 
   return (
     <div className="home">
@@ -49,10 +54,17 @@ const Home = () => {
       </div>
 
       {/* Sección de Productos */}
-      <div className="products-section">
-        {products.map((product) => (
+      <div className="category-page22">
+        <div className="products-section22">
+          {products.map((product) => (
             <ProductCard key={product.ID_PRODUCTO} product={product} />
-        ))}
+          ))}
+        </div>
+      </div>
+      <div className='pagination2'>
+        <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
+        <span>Page {page}</span>
+        <button onClick={handleNextPage}>Next</button>
       </div>
     </div>
   );

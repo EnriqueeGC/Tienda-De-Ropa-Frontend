@@ -4,25 +4,24 @@ import ProductCard from '../components/ProductCard';
 import './CategoryPage.css';
 
 const CategoryPage = () => {
-  const { gender, category, subcategory } = useParams();  // Obtener los parámetros de la URL
+  const { gender, category, subcategory } = useParams(); 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);  // Estado para el mensaje de error
   const [page, setPage] = useState(1);
   const limit = 10;
-
-  console.log(gender, category, subcategory);
 
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
+      setErrorMessage(null);  // Resetear el mensaje de error antes de cada nueva petición
 
-      // Construir la URL de la API en función de los filtros disponibles
       let url = `https://tienda-de-ropa-v6h4.onrender.com/api/products/getProductByGender?genero=${gender}&page=${page}&limit=${limit}`;
-
+      
       if (category) {
         url = `https://tienda-de-ropa-v6h4.onrender.com/api/products/getProductByGenderCategory?genero=${gender}&id_categoria=${category}&page=${page}&limit=${limit}`;
       } else if (subcategory) {
-        url = `https://tienda-de-ropa-v6h4.onrender.com/api/products/getProductBySubcategory?genero=${gender}&id_subcategoria=${subcategory}&page=${page}&limit=${limit}`;
+        url = `https://tienda-de-ropa-v6h4.onrender.com/api/products/getProductByGenderSubcategory?genero=${gender}&id_subcategoria=${subcategory}&page=${page}&limit=${limit}`;
       }
 
       try {
@@ -32,12 +31,13 @@ const CategoryPage = () => {
         if (Array.isArray(data)) {
           setProducts(data);
         } else {
-          console.error("La respuesta de la API no es un array:", data);
-          setProducts([]);  // Asigna un array vacío si no es un array
+          // Si la respuesta no es un array, asume que es un mensaje de error
+          setErrorMessage(data.message || "No se encontraron productos en esta categoría.");
+          setProducts([]);  // Limpia el array de productos
         }
       } catch (error) {
-        console.error("Error fetching products:", error);
-        setProducts([]);  // Asigna un array vacío en caso de error
+        setErrorMessage("Ocurrió un error al obtener los productos. Por favor, intenta nuevamente.");
+        setProducts([]);
       } finally {
         setLoading(false);
       }
@@ -54,19 +54,24 @@ const CategoryPage = () => {
   return (
     <div className="category-page2">
       <h2>Products for {gender}</h2>
-      <div className="products-section2">
-        {products.map(product => (
-          <ProductCard key={product.ID_PRODUCTO} product={product} />
-        ))}
-      </div>
-      <div className='pagination'>
-        <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
-        <span>Page {page}</span>
-        <button onClick={handleNextPage}>Next</button>
-      </div>
+      {errorMessage ? (
+        <p className="error-message">{errorMessage}</p>
+      ) : (
+        <>
+          <div className="products-section2">
+            {products.map(product => (
+              <ProductCard key={product.ID_PRODUCTO} product={product} />
+            ))}
+          </div>
+          <div className='pagination'>
+            <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
+            <span>Page {page}</span>
+            <button onClick={handleNextPage}>Next</button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
 
 export default CategoryPage;
-
