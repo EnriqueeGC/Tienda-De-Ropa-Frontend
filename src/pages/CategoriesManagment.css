@@ -1,0 +1,45 @@
+.container-table-categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 400px 40px 400px;
+}
+
+
+.icons {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    color: white;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    /* width: 10px; */
+}
+
+.filtro-categorias {
+    display: flex;
+    justify-content: space-between; /* Para separarlos */
+    margin-bottom: 20px;
+}
+
+.filtro-categorias button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: black; /* Color del botón */
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.container-tittle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Ajusta el padding según lo necesario para el espacio de los lados */
+  }

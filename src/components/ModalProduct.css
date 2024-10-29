@@ -1,0 +1,178 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    width: 400px; /* Ancho del modal */
+    max-width: 100%; /* Asegura que no se desborde en pantallas pequeñas */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333; /* Color del título */
+}
+
+.modal-content label {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+    text-align: left; /* Alinea el label a la izquierda */
+}
+
+.modal-content select,
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    box-shadow: none; /* Sin sombras internas */
+}
+
+.modal-content select:focus,
+.modal-content input:focus {
+    border-color: #666; /* Color del borde al hacer foco */
+    outline: none;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #333; /* Color al pasar el mouse */
+}
+
+.modal-content button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+} 
+
+/* Estilos para la tabla minimalista */
+.tabla-variantes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .tabla-variantes thead {
+    background-color: #f4f4f4;
+  }
+  
+  .tabla-variantes th, 
+  .tabla-variantes td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tabla-variantes th {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .tabla-variantes td {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Estilo para las filas alternas */
+  .tabla-variantes tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tabla-variantes tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Estilo del botón de eliminar */
+  .boton-eliminar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #e74c3c;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .boton-eliminar:hover {
+    color: #c0392b;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    max-width: 100%;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }  
+
+  .modal-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .modal-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-body {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.modal-column {
+    flex: 1;
+}
+
+.image-preview {
+    text-align: center;
+}
+
+.image-preview {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+  margin-top: 10px;
+}

@@ -1,0 +1,177 @@
+/* Estilos para el modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Difumina el fondo */
+    z-index: 1000; /* Asegura que esté sobre el contenido */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+/* Estilos para los inputs */
+.modal-content input {
+    width: 100%; /* Hacer que ocupen el ancho completo */
+    padding: 10px;
+    margin: 10px 0; /* Espacio entre cada input */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.modal-content input:focus {
+    border-color: #000; /* Color negro al enfocar */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Pequeño resplandor al hacer focus */
+}
+
+/* Botones dentro del modal */
+.modal-content .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espacio entre inputs y botones */
+}
+
+.modal-content button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.modal-content button:hover {
+    background-color: grey;
+}
+
+.modal-content button.cancelar {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-content button.cancelar:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Estilo del título en el modal */
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Centramos el título */
+}
+
+/* Estilos para los label alineados a la izquierda */
+.modal-content label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    text-align: left; /* Alineamos a la izquierda */
+    margin-bottom: 5px; /* Añadimos espacio entre el label y el input */
+}
+
+.modal-content input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Contenedor de las dos columnas */
+.modal-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px; /* Espacio entre las columnas */
+}
+
+/* Estilo para cada columna */
+.modal-column {
+    width: 48%; /* Cada columna ocupa aproximadamente la mitad del ancho */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+    .modal-columns {
+        flex-direction: column;
+        gap: 10px; /* Menos espacio entre columnas en pantallas pequeñas */
+    }
+    .modal-column {
+        width: 100%; /* Las columnas ocupan el 100% del ancho en pantallas pequeñas */
+    }
+}
+
+/* Ajustar el margen entre los inputs */
+.modal-content input {
+    margin: 10px 0; /* Aumentar espacio entre inputs */
+}
+
+
+.filtro-usuarios {
+    display: flex;
+    justify-content: space-between; /* Para separarlos */
+    margin-bottom: 20px;
+}
+
+.filtro-usuarios button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: black; /* Color del botón */
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.filtro-usuarios button:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el ratón */
+}
+
+.modal-horizontal {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.modal-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-column label, .modal-column input, .modal-column select {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+

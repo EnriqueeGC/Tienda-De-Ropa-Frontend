@@ -1,0 +1,42 @@
+/* global.css */
+
+/* Asegurar que todo el body tenga el 100% de altura */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Darle un background oscuro con un buen contraste */
+body {
+  margin: 0;
+  color: #262626;
+  background-color: #fff;
+  background-size: 100% auto;
+}
+
+/* Asegurar que el contenedor principal ocupe toda la altura del viewport */
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa el 100% del viewport */
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: white;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}

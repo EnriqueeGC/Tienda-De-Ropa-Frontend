@@ -1,0 +1,66 @@
+.gestion-usuario {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.usuario-info {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.usuario-info div {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #555;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    /* width: 100%; */
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.filtro-usuarios {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+.filtro-usuarios button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: black; /* Color del botón */
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.filtro-usuarios button:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el ratón */
+}

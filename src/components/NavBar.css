@@ -1,0 +1,276 @@
+/* Estilos para la primera barra (Login, Register, etc.) */
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    font-size: 18px;
+  }
+  
+  .top-bar .right-options a {
+    margin-left: 15px;
+    text-decoration: none;
+    margin: 0 10px; /* Espacio entre los enlaces */
+    color: #333;
+  }
+  
+  /* Estilos para la segunda barra (Menú de navegación) */
+  .menu-bar {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .menu-bar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  
+  li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .menu-bar .filter input {
+    padding: 5px;
+    border: 1px solid #979797;
+    border-radius: 10px;
+  }
+  /* Estilos generales para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo a la izquierda */
+.navbar-logo .logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Categorías al centro */
+.navbar-categories ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.navbar-categories ul li {
+  margin: 0;
+}
+
+.navbar-categories ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.navbar-categories ul li a:hover {
+  color: grey;
+}
+
+/* Iconos a la derecha */
+.navbar-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: grey;
+}
+
+.left-options {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
+}
+
+.logo-image {
+  height: 50px; /* Ajusta la altura de la imagen */
+  width: 50px; /* Mantiene la proporción de la imagen */
+}
+
+.navbar-item {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px; /* Espacio entre los enlaces */
+  font-weight: bold;
+}
+
+.divider {
+  color: black;
+}
+
+.navbar-item a:hover {
+  color: #8090a1; 
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.central-panel {
+  width: 100%;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+.navbar-categories ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-categories ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar-icons .icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar-categories ul {
+    flex-direction: column;
+    display: none;
+    gap: 10px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+  }
+
+.navbar-categories.open ul {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navbar-icons {
+    display: none;
+  }
+}
+
+
+/* Estilos para el contenedor del dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ocultar el menú por defecto */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 4px;
+  padding: 10px 0;
+}
+
+/* Mostrar el menú al pasar el puntero o hacer clic */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus .dropdown-menu {
+  display: block;
+}
+
+/* Estilos para las opciones del menú */
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+/* Cambiar color al pasar el puntero sobre las opciones */
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos adicionales para mejorar la presentación */
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  color: #333;
+}
+
+.dropdown-menu a {
+  transition: background-color 0.3s ease;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.navbar-search-icon:hover {
+  color: #ddd;
+}
