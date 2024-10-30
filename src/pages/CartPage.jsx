@@ -65,8 +65,9 @@ const CartPage = () => {
         window.location.href = '/'; // Redirigir a la página principal
     };
     const handleCheckout = () => {
-        navigate('/payment-methods', { state: { total }}); // Redirige a la gestión de pagos con el total
+        navigate('/payment-methods', { state: { total, cartItems }}); // Redirige a la gestión de pagos con el total
     };
+    console.log(cartItems);
     return (
         <div className="cart-page">
             <h1>Carrito de Compras</h1>
