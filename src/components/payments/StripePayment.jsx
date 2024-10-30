@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { createOrder } from '../services/orderService';
 import './StripePayment.css';
 
@@ -13,6 +13,8 @@ const CheckoutForm = ({ amount, userId, cartItems }) => {
     const stripe = useStripe();
     const elements = useElements();
     const id_usuario = localStorage.getItem('id');
+    const navigate = useNavigate();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
@@ -50,6 +52,16 @@ const CheckoutForm = ({ amount, userId, cartItems }) => {
                 alert(`Error en el pago: ${result.error.message}`);
             } else if (result.paymentIntent.status === 'succeeded') {
                 alert('¡Pago exitoso!');
+                // await axios.post('https://tienda-de-ropa-v6h4.onrender.com/api/order/markOrderAsPaid', {
+                //     id_pedido,
+                // });
+                
+                // elimimar el carrito y detalles carrito 
+                await axios.delete(`https://tienda-de-ropa-v6h4.onrender.com/api/cart/deleteCart/${id_usuario}`);
+
+                // Redirigir a la página de confirmación con navigate
+                navigate(`/order-confirmation/${id_usuario}/${id_pedido}`);
+
             }
         } catch (error) {
             alert(`Error en el proceso de pago: ${error.message}`);

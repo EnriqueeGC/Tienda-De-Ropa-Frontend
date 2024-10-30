@@ -1,0 +1,47 @@
+.order-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    width: 80%;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-page h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.order-info, .order-details {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    color: #555;
+}
+
+.order-info p, .product-item p {
+    margin: 0.5rem 0;
+}
+
+.order-details {
+    margin-top: 1rem;
+}
+
+.product-item {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.product-item p {
+    color: #666;
+}
+
+.error {
+    color: red;
+}

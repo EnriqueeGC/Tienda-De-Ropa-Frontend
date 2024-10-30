@@ -17,6 +17,7 @@ import CategoryPage from './pages/CategoryPage';
 import DisccountPage from './pages/DisccountPage';
 import PaymentMethods from './components/PaymentMethods';
 import StripePayment from './components/payments/StripePayment';
+import OrderPage from './pages/OrderPage';
 import './Global.css'
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
 
         <Route path="/payment-methods" element={<PaymentMethods />} />
         <Route path="/stripe-payment" element={<StripePayment />} />
+        <Route path="/order-confirmation/:id_usuario/:id_pedido" element={<OrderPage />}  />
       </Routes>
       <Footer /> {/* Pie de página que estará visible en todas las rutas */}
     </Router>

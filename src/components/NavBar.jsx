@@ -123,7 +123,7 @@ const Navbar = () => {
             <div className={`navbar-categories ${menuOpen ? 'open' : ''}`}>
               <ul>
                 <li>
-                  <a href="/">Todos</a>
+                  <a onClick={handleLogoClick}>Todos</a>
                 </li>
                 <div className="dropdown-categories">
                   <li>
@@ -352,7 +352,7 @@ const Navbar = () => {
             <div className={`navbar-categories ${menuOpen ? 'open' : ''}`}>
             <ul>
                 <li>
-                  <a href="#">Todos</a>
+                  <a href="/">Todos</a>
                 </li>
                 <div className="dropdown-categories">
                   <li>
