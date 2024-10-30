@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import './CartPage.css';
-
 const CartPage = () => {
+    const navigate = useNavigate(); // Inicializa el hook de navegación
     const [cartItems, setCartItems] = useState([]);
     const [total, setTotal] = useState(0);
-
     const fetchCartDetails = async () => {
         const id_usuario = localStorage.getItem('id');
         try {
@@ -23,7 +23,6 @@ const CartPage = () => {
             console.error('Error fetching cart details:', error);
         }
     };
-
     const calculateTotal = (items) => {
         const totalAmount = items.reduce((acc, item) => {
             const precio = parseFloat(item.PRECIO) || 0;
@@ -32,11 +31,9 @@ const CartPage = () => {
         }, 0);
         setTotal(totalAmount);
     };
-
     useEffect(() => {
         fetchCartDetails();
     }, []);
-
     const handleQuantityChange = (index, newQuantity) => {
         const updatedCartItems = cartItems.map((item, idx) => 
             idx === index ? { ...item, CANTIDAD: newQuantity } : item
@@ -44,8 +41,9 @@ const CartPage = () => {
         setCartItems(updatedCartItems);
         calculateTotal(updatedCartItems);
     };
-
     const handleRemoveFromCart = async (id_detalle_carrito) => {
+        const confirmRemove = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
+        if (!confirmRemove) return;
         try {
             const response = await fetch('https://tienda-de-ropa-v6h4.onrender.com/api/cart/deleteCartItem', {
                 method: 'DELETE',
@@ -63,11 +61,12 @@ const CartPage = () => {
             console.error('Error deleting item from cart:', error);
         }
     };
-
     const handleSeguirComprando = () => {
         window.location.href = '/'; // Redirigir a la página principal
     };
-
+    const handleCheckout = () => {
+        navigate('/payment-methods', { state: { total }}); // Redirige a la gestión de pagos con el total
+    };
     return (
         <div className="cart-page">
             <h1>Carrito de Compras</h1>
@@ -108,14 +107,12 @@ const CartPage = () => {
                     ))}
                     <div className="cart-footer">
                         <h2>Total: Q{total.toFixed(2)}</h2>
-                        <button className="checkout-button">Comprar</button>
+                        <button className="checkout-button" onClick={handleCheckout}>Comprar</button>
                     </div>
                 </div>
             )}
             <button onClick={handleSeguirComprando}>Seguir comprando</button>
         </div>
     );
-    
 };
-
 export default CartPage;

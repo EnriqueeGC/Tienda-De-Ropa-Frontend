@@ -123,7 +123,7 @@ const Navbar = () => {
             <div className={`navbar-categories ${menuOpen ? 'open' : ''}`}>
               <ul>
                 <li>
-                  <a href="#">Nuevos</a>
+                  <a href="/">Todos</a>
                 </li>
                 <div className="dropdown-categories">
                   <li>
@@ -134,7 +134,7 @@ const Navbar = () => {
                         {/* Subcategorías */}
                         {subcategoriasZapatillas.map(subcategoria => (
                           <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
-                          onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
                           >{subcategoria.NOMBRE}</a>
                         ))}
                       </div>
@@ -143,7 +143,7 @@ const Navbar = () => {
                         {/* Subcategorías */}
                         {subcategoriasRopa.map(subcategoria => (
                           <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
-                          onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
                           >{subcategoria.NOMBRE}</a>
                         ))}
                       </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
                         {/* Subcategorías */}
                         {subcategoriasDeporte.map(subcategoria => (
                           <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
-                          onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
                           >{subcategoria.NOMBRE}</a>
                         ))}
                       </div>
@@ -161,17 +161,59 @@ const Navbar = () => {
                         {/* Subcategorías */}
                         {subcategoriasAccesorios.map(subcategoria => (
                           <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
-                          onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
                           >{subcategoria.NOMBRE}</a>
                         ))}
                       </div>
                     </div>
                   </li>
                 </div>
-                <li><a href="#" onClick={() => handleCategoryClick('Mujer')}>Mujer</a></li>
+                {/* <li><a href="#" onClick={() => handleCategoryClick('Mujer')}>Mujer</a></li> */}
+                <div className="dropdown-categories">
+                  <li>
+                    <a href="#" onClick={() => handleCategoryClick('Mujer')}>Mujer</a>
+                    <div className="dropdown-menu-categories">
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 122); }}>Zapatillas</a>
+                        {/* Subcategorías */}
+                        {subcategoriasZapatillas.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 104); }}>Ropa</a>
+                        {/* Subcategorías */}
+                        {subcategoriasRopa.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 102); }}>Deporte</a>
+                        {/* Subcategorías */}
+                        {subcategoriasDeporte.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 106); }}>Accesorios y Equipamiento</a>
+                        {/* Subcategorías */}
+                        {subcategoriasAccesorios.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                </div>
                 <li><a href="#" onClick={() => handleCategoryClick('Ninio')}>Niño/a</a></li>
               </ul>
-
             </div>
             <div className="navbar-icons">
               <FaSearch className="icon" />
@@ -308,10 +350,97 @@ const Navbar = () => {
               <img src={logo} className='logo-image' alt="Logo" />
             </div>
             <div className={`navbar-categories ${menuOpen ? 'open' : ''}`}>
-              <ul>
-                <li><a href="#">Nuevos</a></li>
-                <li><a href="#" onClick={() => handleCategoryClick('Hombre')}>Hombre</a></li>
-                <li><a href="#" onClick={() => handleCategoryClick('Mujer')}>Mujer</a></li>
+            <ul>
+                <li>
+                  <a href="#">Todos</a>
+                </li>
+                <div className="dropdown-categories">
+                  <li>
+                    <a href="#" onClick={() => handleCategoryClick('Hombre')}>Hombre</a>
+                    <div className="dropdown-menu-categories">
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Hombre', 122); }}>Zapatillas</a>
+                        {/* Subcategorías */}
+                        {subcategoriasZapatillas.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Hombre', 104); }}>Ropa</a>
+                        {/* Subcategorías */}
+                        {subcategoriasRopa.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Hombre', 102); }}>Deporte</a>
+                        {/* Subcategorías */}
+                        {subcategoriasDeporte.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Hombre', 106); }}>Accesorios y Equipamiento</a>
+                        {/* Subcategorías */}
+                        {subcategoriasAccesorios.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Hombre', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                </div>
+                {/* <li><a href="#" onClick={() => handleCategoryClick('Mujer')}>Mujer</a></li> */}
+                <div className="dropdown-categories">
+                  <li>
+                    <a href="#" onClick={() => handleCategoryClick('Mujer')}>Mujer</a>
+                    <div className="dropdown-menu-categories">
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 122); }}>Zapatillas</a>
+                        {/* Subcategorías */}
+                        {subcategoriasZapatillas.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 104); }}>Ropa</a>
+                        {/* Subcategorías */}
+                        {subcategoriasRopa.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 102); }}>Deporte</a>
+                        {/* Subcategorías */}
+                        {subcategoriasDeporte.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                      <div className="category-column-categories">
+                        <a href="#" onClick={(e) => { e.preventDefault(); handleProductByGenderAndCategoryClick('Mujer', 106); }}>Accesorios y Equipamiento</a>
+                        {/* Subcategorías */}
+                        {subcategoriasAccesorios.map(subcategoria => (
+                          <a key={subcategoria.ID_SUBCATEGORIA} className="subcategory-link"
+                            onClick={(e) => { e.preventDefault(); handleProductByGenderAndSubcategoryClick('Mujer', subcategoria.ID_SUBCATEGORIA); }}
+                          >{subcategoria.NOMBRE}</a>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                </div>
                 <li><a href="#" onClick={() => handleCategoryClick('Ninio')}>Niño/a</a></li>
               </ul>
             </div>

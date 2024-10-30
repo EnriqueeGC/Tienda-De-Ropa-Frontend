@@ -6,7 +6,7 @@ const Home = () => {
   const [currentAd, setCurrentAd] = useState(0);
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const limit = 10;
+  const limit = 12;
 
   // Mensajes para la barra de anuncios
   const ads = [

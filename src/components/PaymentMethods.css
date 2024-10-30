@@ -1,0 +1,106 @@
+/* Estilo general del contenedor principal */
+.payment-methods-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f7fafc; /* Color de fondo suave */
+  }
+  
+  /* Estilo del contenedor del formulario */
+  .payment-methods-form {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    width: 100%; /* Ancho completo */
+    padding: 2rem; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 1.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* Título del formulario */
+  .payment-methods-title {
+    font-size: 2rem; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: #1a202c; /* Color de texto */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  /* Espaciado entre métodos de pago */
+  .payment-method {
+    display: flex; /* Flexbox para alinear icono, título y descripción */
+    align-items: center; /* Alinear verticalmente */
+    padding: 1rem; /* Espaciado interno */
+    border: 2px solid #e2e8f0; /* Borde ligero */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  /* Hover y selección del método de pago */
+  .payment-method:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra en hover */
+  }
+  
+  .payment-method.selected {
+    border-color: #3182ce; /* Color del borde seleccionado */
+    background-color: #ebf8ff; /* Color de fondo cuando se selecciona */
+  }
+  
+  /* Estilo del icono */
+  .payment-method-icon {
+    padding: 0.75rem; /* Espaciado interno */
+    border-radius: 9999px; /* Forma circular */
+    background-color: #edf2f7; /* Fondo gris claro */
+    color: #4a5568; /* Color del icono */
+  }
+  
+  /* Estilo del título y descripción */
+  .payment-method-title {
+    font-size: 1.25rem; /* Tamaño del título */
+    font-weight: 600; /* Peso de fuente */
+    color: #1a202c; /* Color del título */
+  }
+  
+  .payment-method-description {
+    font-size: 0.875rem; /* Tamaño de la descripción */
+    color: #718096; /* Color gris para descripción */
+  }
+  
+  /* Estilo para el botón */
+  .payment-methods-button {
+    margin-top: 1.5rem; /* Espaciado superior */
+    width: 100%; /* Ancho completo */
+    padding: 1rem; /* Espaciado interno */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Alinear verticalmente */
+    justify-content: center; /* Centrar contenido */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente */
+    color: #ffffff; /* Color del texto */
+    background-color: #000000; /* Color de fondo del botón */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  /* Hover del botón */
+  .payment-methods-button:hover {
+    background-color: #2b6cb0; /* Color de fondo en hover */
+  }
+  
+  /* Estilo del cargando */
+  .loading-spinner {
+    width: 1.5rem; /* Tamaño del spinner */
+    height: 1.5rem; /* Tamaño del spinner */
+    border: 2px solid #ffffff; /* Borde blanco */
+    border-top: 2px solid transparent; /* Parte superior transparente */
+    border-radius: 50%; /* Forma circular */
+    animation: spin 0.6s linear infinite; /* Animación de giro */
+  }
+  
+  /* Animación de giro */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

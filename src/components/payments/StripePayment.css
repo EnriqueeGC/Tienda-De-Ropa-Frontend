@@ -1,0 +1,56 @@
+.stripe-payment-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa; /* Color de fondo */
+}
+
+.stripe-payment-form {
+  max-width: 400px; /* Limitar el ancho del formulario */
+  padding: 2rem;
+  background-color: white; /* Fondo blanco para el formulario */
+  border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.payment-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: #000000; /* Color primario */
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-button:disabled {
+  background-color: #6c757d; /* Color deshabilitado */
+}
+
+.loading-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  margin-right: 0.5rem; /* Espaciado entre el spinner y el texto */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

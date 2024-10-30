@@ -14,6 +14,9 @@ import ModalVariantProduct from './components/ModalVariantProduct';
 import UserManagment from './pages/UserManagment';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
+import DisccountPage from './pages/DisccountPage';
+import PaymentMethods from './components/PaymentMethods';
+import StripePayment from './components/payments/StripePayment';
 import './Global.css'
 
 function App() {
@@ -47,6 +50,10 @@ function App() {
         <Route path="/category/:gender" element={<CategoryPage />} />
         <Route path="/category/:gender/:category" element={<CategoryPage />} />
         <Route path="/category/:gender/subcat/:subcategory" element={<CategoryPage />} />
+        <Route path="/discounts" element={<DisccountPage />} />
+
+        <Route path="/payment-methods" element={<PaymentMethods />} />
+        <Route path="/stripe-payment" element={<StripePayment />} />
       </Routes>
       <Footer /> {/* Pie de página que estará visible en todas las rutas */}
     </Router>

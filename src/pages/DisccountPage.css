@@ -1,0 +1,54 @@
+.descuentos-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.descuentos-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.descuentos-table {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.descuentos-table th, .descuentos-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.descuentos-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+}
+
+.descuentos-table td {
+    color: #555;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-buttons svg {
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.action-buttons svg:hover {
+    color: #007bff;
+}
