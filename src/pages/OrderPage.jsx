@@ -29,6 +29,33 @@ const OrderPage = () => {
         fetchOrderDetails();
     }, [id_usuario, id_pedido]);
 
+    // Función para generar y descargar la factura
+    const handleGenerateInvoice = async () => {
+        try {
+            const response = await fetch(`https://tienda-de-ropa-v6h4.onrender.com/api/factura/${id_pedido}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/pdf',
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al generar la factura');
+            }
+
+            // Crear un blob para descargar el archivo PDF
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `factura_${id_pedido}.pdf`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
     if (loading) return <div className="order-page">Cargando detalles del pedido...</div>;
     if (error) return <div className="order-page error">Error: {error}</div>;
 
@@ -51,8 +78,13 @@ const OrderPage = () => {
                     </div>
                 ))}
             </div>
+            {/* Botón para generar la factura */}
+            <button className="invoice-button" onClick={handleGenerateInvoice}>
+                Generar Factura
+            </button>
         </div>
     );
 };
 
 export default OrderPage;
+
