@@ -254,10 +254,8 @@ const Navbar = () => {
                           </div>
                         </div>
                         <span className="divider">|</span>
-                        {/* <a href="/customer-managment">Gestión de Cientes</a> */}
-                        <div className="dropdown">
-                          <span className="dropdown-toggle">Gestión de Usuarios</span>
-                        </div>
+                        <a href="/customer-managment" className='dropdown-toggle'>Gestión de Usuarios</a> 
+                        
                         <span className="divider">|</span>
                         <a href="/" onClick={handleLogout}>Cerrar sesión</a>
                       </>
