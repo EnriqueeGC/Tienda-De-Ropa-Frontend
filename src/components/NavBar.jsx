@@ -243,7 +243,7 @@ const Navbar = () => {
                   <div className="navbar-item">
                     {rolId === '1' && (
                       <>
-                        <a href="/admin-dashboard">Panel de administración</a>
+                        <a href="/user-managment">Metricas</a>
                         <span className="divider">|</span>
                         <div className="dropdown">
                           <a href="/product-managment" className="dropdown-toggle">Gestión de Inventario</a>
