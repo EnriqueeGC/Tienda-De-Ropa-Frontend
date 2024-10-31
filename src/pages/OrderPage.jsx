@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './OrderPage.css';
+import './orderPage.css';
 
 const OrderPage = () => {
     const { id_usuario, id_pedido } = useParams();
