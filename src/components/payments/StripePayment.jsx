@@ -28,6 +28,7 @@ const CheckoutForm = ({ amount, userId, cartItems }) => {
                     id_producto: item.ID_PRODUCTO,
                     cantidad: item.CANTIDAD,
                     precio_unitario: item.PRECIO,
+                    id_variante: item.ID_VARIANTE
                 }))
             };
             const id_pedido = await createOrder(orderData);

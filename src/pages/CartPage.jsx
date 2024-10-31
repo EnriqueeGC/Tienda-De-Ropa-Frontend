@@ -8,7 +8,7 @@ const CartPage = () => {
     const fetchCartDetails = async () => {
         const id_usuario = localStorage.getItem('id');
         try {
-            const response = await fetch(`https://tienda-de-ropa-v6h4.onrender.com/api/cart/getCartDetails/${id_usuario}`, {
+            const response = await fetch(`http://localhost:3000/api/cart/getCartDetails/${id_usuario}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' },
             });
