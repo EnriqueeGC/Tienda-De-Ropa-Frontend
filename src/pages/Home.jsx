@@ -50,8 +50,8 @@ const Home = () => {
       {/* Área para Imágenes y Videos Promocionales */}
       <div className="promotional-section">
         {/* Espacio para agregar imágenes o videos */}
-        <div className="promo-item">Aquí puedes agregar un anuncio en imagen o video.</div>
-      </div>
+   {/*      <div className="promo-item">Aquí puedes agregar un anuncio en imagen o video.</div>
+ */}      </div>
 
       {/* Sección de Productos */}
       <div className="category-page22">
