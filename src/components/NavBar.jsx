@@ -318,7 +318,7 @@ const Navbar = () => {
                           </div>
                         </div>
                         <span className="divider">|</span>
-                        <a href="/orders">Mis pedidos</a>
+                        <a href="/orders-customer">Mis pedidos</a>
                         <span className="divider">|</span>
                         <a href="/favorites">Favoritos</a>
                         <span className="divider">|</span>

@@ -73,6 +73,7 @@ const ModalProductFastBuy = ({ id_producto, onClose }) => {
                 navigate('/cart');
             } else {
                 console.error('Error al agregar producto al carrito:', data.message);
+                alert('Error al agregar producto al carrito.');
             }
         } catch (error) {
             console.error('Error al agregar al carrito:', error);

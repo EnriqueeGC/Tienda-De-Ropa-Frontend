@@ -19,6 +19,7 @@ import PaymentMethods from './components/PaymentMethods';
 import StripePayment from './components/payments/StripePayment';
 import OrderPage from './pages/OrderPage';
 import CanvasM from './pages/canvas';
+import OrdersCustomer from './pages/OrdersCustomer';
 import './Global.css'
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/stripe-payment" element={<StripePayment />} />
         <Route path="/order-confirmation/:id_usuario/:id_pedido" element={<OrderPage />}  />
         <Route path="/admin-metricas" element={<CanvasM rolId={rolId}/>} />
+        <Route path="/orders-customer" element={<OrdersCustomer />} />
       </Routes>
       <Footer /> {/* Pie de página que estará visible en todas las rutas */}
     </Router>

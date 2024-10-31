@@ -14,13 +14,13 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Síguenos</h3>
           <div className="social-icons">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/peque_nawear/?hl=es" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.tiktok.com/@pequenawear_oficial?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
               <FaTiktok />
             </a>
           </div>
