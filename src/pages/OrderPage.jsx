@@ -32,7 +32,7 @@ const OrderPage = () => {
     // Función para generar y descargar la factura
     const handleGenerateInvoice = async () => {
         try {
-            const response = await fetch(`https://tienda-de-ropa-v6h4.onrender.com/api/factura/${id_pedido}`, {
+            const response = await fetch(`http://localhost:3000/api/factura/${id_pedido}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/pdf',
