@@ -2,6 +2,6 @@
 import axios from 'axios';
 
 export const createOrder = async (orderData) => {
-    const response = await axios.post('http://localhost:3000/api/order/pedido', orderData);
+    const response = await axios.post('https://tienda-de-ropa-v6h4.onrender.com/api/order/pedido', orderData);
     return response.data.id_pedido;
 };
