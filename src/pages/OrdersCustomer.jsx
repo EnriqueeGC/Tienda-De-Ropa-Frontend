@@ -12,7 +12,7 @@ const PedidosPage = () => {
             const id_usuario = localStorage.getItem('id'); // Asegúrate de que este valor se use correctamente
             try {
                 // Asegúrate de utilizar `id_usuario` en lugar de un valor fijo
-                const response = await fetch(`http://localhost:3000/api/order/getOrdersByUser/${id_usuario}`);
+                const response = await fetch(`https://tienda-de-ropa-v6h4.onrender.com/api/order/getOrdersByUser/${id_usuario}`);
                 const data = await response.json();
 
                 if (!response.ok) {
